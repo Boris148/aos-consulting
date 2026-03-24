@@ -493,26 +493,29 @@
       <h3>Contact Us</h3>
       <p>We'll be in touch within 24 hours.</p>
 
-      <input type="text" class="form-field" placeholder="Full Name" required>
-      <input type="email" class="form-field" placeholder="Email Address" required>
-      <input type="tel" class="form-field" placeholder="Phone Number" required>
-      <input type="text" class="form-field" placeholder="Business Name (if applicable)">
-      <select class="form-field" style="appearance: auto;">
-        <option value="" disabled selected>What are you interested in?</option>
-        <option>Business Consulting</option>
-        <option>Partner Program</option>
-        <option>Training & Mentorship</option>
-        <option>Other</option>
-      </select>
+      <form id="contact-form" onsubmit="return handleSubmit(event)">
+        <input type="text" class="form-field" placeholder="Full Name">
+        <input type="email" class="form-field" placeholder="Email Address">
+        <input type="tel" class="form-field" placeholder="Phone Number">
+        <input type="text" class="form-field" placeholder="Business Name (if applicable)">
+        <select class="form-field" style="appearance: auto;">
+          <option value="" disabled selected>What are you interested in?</option>
+          <option>Business Consulting</option>
+          <option>Partner Program</option>
+          <option>Training & Mentorship</option>
+          <option>Other</option>
+        </select>
 
-      <div class="consent">
-        <label>
-          <input type="checkbox" id="sms-consent">
-          <span>I agree to receive SMS messages from AOS Funds LLC regarding my consultation, appointment reminders, and account updates. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help.</span>
-        </label>
-      </div>
+        <div class="consent">
+          <label>
+            <input type="checkbox" id="sms-consent">
+            <span>I agree to receive SMS messages from AOS Funds LLC regarding my consultation, appointment reminders, and account updates. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help.</span>
+          </label>
+        </div>
 
-      <button type="submit" class="submit-btn">Request Consultation →</button>
+        <button type="submit" class="submit-btn">Request Consultation →</button>
+      </form>
+      <script>function handleSubmit(e){e.preventDefault();alert('Thank you! We will be in touch within 24 hours.');return false;}</script>
     </div>
   </div>
 </div>
