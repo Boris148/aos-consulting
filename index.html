@@ -312,6 +312,7 @@
 
   .consent label { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; text-align: left; }
   .consent input { margin-top: 3px; flex-shrink: 0; }
+  .consent .required { color: #e74c3c; }
 
   .submit-btn {
     display: block;
@@ -506,8 +507,8 @@
 
       <div class="consent">
         <label>
-          <input type="checkbox" required>
-          I agree to receive SMS messages from AOS Funds LLC regarding my consultation, appointment reminders, and account updates. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help.
+          <input type="checkbox" id="sms-consent" required>
+          <span><strong style="color:#e74c3c;">*</strong> I agree to receive SMS messages from AOS Funds LLC regarding my consultation, appointment reminders, and account updates. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help. <em>(Required)</em></span>
         </label>
       </div>
 
