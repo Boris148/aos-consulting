@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AOS Funds — Business Consulting & Partner Program</title>
+<meta name="description" content="AOS Funds helps entrepreneurs build and scale their businesses through consulting, mentorship, and strategic partnerships.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C8A24E;
+    --gold-light: #DDB95D;
+    --gold-dark: #A8862E;
+    --bg: #0B0B0F;
+    --bg-card: rgba(255,255,255,0.03);
+    --text: #E8E6E1;
+    --text-muted: #8A8A8F;
+    --text-dim: #5A5A60;
+    --border: rgba(200,162,78,0.12);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  .nav {
+    padding: 20px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--gold);
+    letter-spacing: 1px;
+  }
+
+  .nav .tagline {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(200,162,78,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(200,162,78,0.25);
+    padding: 7px 18px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 5.5vw, 48px);
+    font-weight: 900;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 .highlight {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    line-height: 1.8;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: #0B0B0F;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(200,162,78,0.2);
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(200,162,78,0.3);
+  }
+
+  /* Divider */
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto;
+  }
+
+  /* Section */
+  .section {
+    padding: 64px 24px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section p {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 620px;
+  }
+
+  .section.center { text-align: center; }
+  .section.center p { margin: 0 auto; }
+
+  /* Cards */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 28px 0;
+  }
+
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px;
+  }
+
+  .card .icon { font-size: 28px; margin-bottom: 12px; }
+  .card h4 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+  .card p { font-size: 13px; color: var(--text-dim); margin: 0; }
+
+  /* Steps */
+  .steps { margin: 28px 0; counter-reset: step; }
+
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--gold);
+    min-width: 32px;
+    text-align: right;
+  }
+
+  .step h4 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .step p { font-size: 13px; color: var(--text-dim); margin: 0; }
+
+  /* Testimonial */
+  .testimonial {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px;
+    margin: 20px 0;
+  }
+
+  .testimonial blockquote {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .testimonial .author {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+
+  /* Stats */
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin: 32px 0;
+    flex-wrap: wrap;
+  }
+
+  .stat { text-align: center; }
+
+  .stat .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--gold);
+  }
+
+  .stat .label {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* Form */
+  .form-section {
+    background: rgba(200,162,78,0.04);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 560px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .form-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .form-section p {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 24px;
+  }
+
+  .form-field {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 12px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-field:focus { border-color: var(--gold); }
+  .form-field::placeholder { color: var(--text-dim); }
+
+  .consent {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin: 16px 0;
+    line-height: 1.6;
+  }
+
+  .consent label { display: flex; align-items: flex-start; gap: 8px; cursor: pointer; text-align: left; }
+  .consent input { margin-top: 3px; flex-shrink: 0; }
+
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: #0B0B0F;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.3s;
+  }
+
+  .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(200,162,78,0.3); }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 48px 24px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .footer p { font-size: 12px; color: var(--text-dim); margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<div class="nav">
+  <div class="logo">AOS FUNDS</div>
+  <div class="tagline">Business Consulting & Partner Program</div>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">Consulting · Strategy · Partnerships</div>
+    <h1>Helping Entrepreneurs <span class="highlight">Build & Scale</span></h1>
+    <p>AOS Funds provides business consulting, strategic advisory, and partnership programs designed to help entrepreneurs launch, grow, and operate at the next level.</p>
+    <a href="#contact" class="cta-btn">Schedule a Consultation →</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- What We Do -->
+<div class="section center">
+  <div class="container">
+    <div class="section-label">What We Do</div>
+    <h2>Strategic Business Solutions</h2>
+    <p>We work with entrepreneurs and business owners to develop strategies, systems, and partnerships that drive real results.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="icon">📋</div>
+        <h4>Business Consulting</h4>
+        <p>One-on-one advisory for entrepreneurs looking to launch or scale. We help you build the right systems from day one.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h4>Partner Program</h4>
+        <p>Join our network of partners who refer clients and earn commissions. Full training, onboarding, and ongoing support included.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h4>Business Strategy</h4>
+        <p>Custom growth plans, market positioning, and operational frameworks tailored to your industry and goals.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h4>Training & Mentorship</h4>
+        <p>Learn the skills and systems needed to operate a successful business — from sales to client management to scaling.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- How It Works -->
+<div class="section">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2>Simple Onboarding Process</h2>
+    <p>Getting started is straightforward. No complexity, no runaround.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <h4>Book a Consultation</h4>
+          <p>Fill out our contact form and schedule a call with our team to discuss your goals.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <h4>Strategy Session</h4>
+          <p>We'll assess your situation and put together a customized plan for your business.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <h4>Onboarding & Setup</h4>
+          <p>Get set up in our systems with full access to tools, resources, and support.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <h4>Ongoing Support</h4>
+          <p>Regular check-ins, training updates, and direct access to our advisory team.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Stats -->
+<div class="section center">
+  <div class="container">
+    <div class="section-label">By the Numbers</div>
+    <h2>Trusted by Entrepreneurs Nationwide</h2>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">5,000+</div>
+        <div class="label">Clients Served</div>
+      </div>
+      <div class="stat">
+        <div class="num">300+</div>
+        <div class="label">Active Partners</div>
+      </div>
+      <div class="stat">
+        <div class="num">50+</div>
+        <div class="label">Industries</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Testimonials -->
+<div class="section center">
+  <div class="container">
+    <div class="section-label">What Our Partners Say</div>
+    <h2>Real Results, Real People</h2>
+
+    <div class="testimonial">
+      <blockquote>"AOS gave me the guidance and systems I needed to finally take my business seriously. The partner program has been a game changer for my income."</blockquote>
+      <div class="author">— Partner since 2024</div>
+    </div>
+
+    <div class="testimonial">
+      <blockquote>"I was struggling to figure things out on my own. After working with AOS, I had a clear roadmap and the support to execute on it."</blockquote>
+      <div class="author">— Consulting Client</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Contact Form -->
+<div class="section center" id="contact">
+  <div class="container">
+    <div class="section-label">Get Started</div>
+    <h2>Schedule a Consultation</h2>
+    <p style="margin-bottom: 32px;">Fill out the form below and a member of our team will reach out to schedule your consultation call.</p>
+
+    <div class="form-section">
+      <h3>Contact Us</h3>
+      <p>We'll be in touch within 24 hours.</p>
+
+      <input type="text" class="form-field" placeholder="Full Name" required>
+      <input type="email" class="form-field" placeholder="Email Address" required>
+      <input type="tel" class="form-field" placeholder="Phone Number" required>
+      <input type="text" class="form-field" placeholder="Business Name (if applicable)">
+      <select class="form-field" style="appearance: auto;">
+        <option value="" disabled selected>What are you interested in?</option>
+        <option>Business Consulting</option>
+        <option>Partner Program</option>
+        <option>Training & Mentorship</option>
+        <option>Other</option>
+      </select>
+
+      <div class="consent">
+        <label>
+          <input type="checkbox" required>
+          I agree to receive SMS messages from AOS Funds LLC regarding my consultation, appointment reminders, and account updates. Message frequency varies. Msg & data rates may apply. Reply STOP to unsubscribe or HELP for help.
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Request Consultation →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p><strong style="color: var(--gold);">AOS Funds LLC</strong></p>
+  <p style="margin-top: 8px;">Business Consulting · Partner Programs · Strategic Advisory</p>
+  <p style="margin-top: 4px;">Contact: info@aosfunds.com</p>
+  <p style="margin-top: 16px;">© 2026 AOS Funds LLC. All rights reserved.</p>
+  <p style="margin-top: 8px;"><a href="#" style="color: var(--text-dim); text-decoration: underline;">Privacy Policy</a> · <a href="#" style="color: var(--text-dim); text-decoration: underline;">Terms of Service</a></p>
+</div>
+
+</body>
+</html>
